@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aegis Bookkeeping | Protecting Your Business. Powering Your Growth.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0d1b2a;
+  --navy-mid: #122236;
+  --navy-light: #1a3048;
+  --navy-card: #0f2035;
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --gold-dim: rgba(201,168,76,0.15);
+  --white: #f5f0e8;
+  --gray: #8a9bb0;
+  --gray-light: #b0bec5;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 60px; background: rgba(13,27,42,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gold-dim); }
+.nav-logo { display: flex; align-items: center; gap: 14px; }
+.nav-logo img { height: 54px; width: auto; }
+.nav-logo-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--gold); letter-spacing: 3px; }
+.nav-logo-sub { font-size: 10px; font-weight: 300; letter-spacing: 4px; color: var(--gold-light); margin-top: 3px; opacity: 0.7; }
+.nav-links { display: flex; gap: 38px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--white); font-size: 12px; letter-spacing: 2px; opacity: 0.7; transition: opacity 0.2s, color 0.2s; text-transform: uppercase; }
+.nav-links a:hover { opacity: 1; color: var(--gold-light); }
+.nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 10px 26px; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.25s, color 0.25s; text-decoration: none; }
+.nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+.hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding: 120px 60px 220px; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 45%, rgba(201,168,76,0.07) 0%, transparent 60%), radial-gradient(ellipse at 15% 85%, rgba(201,168,76,0.04) 0%, transparent 50%); }
+.hero-grid { position: absolute; inset: 0; opacity: 0.025; background-image: linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-content { position: relative; z-index: 2; max-width: 620px; }
+.hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; animation: fadeUp 0.8s ease both; }
+.hero-eyebrow-line { width: 40px; height: 1px; background: var(--gold); opacity: 0.5; }
+.hero-eyebrow span { font-size: 11px; letter-spacing: 4px; color: var(--gold-light); text-transform: uppercase; opacity: 0.8; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 6vw, 82px); font-weight: 500; line-height: 1.05; color: var(--white); margin-bottom: 14px; animation: fadeUp 0.8s 0.1s ease both; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-tagline { font-size: 12px; letter-spacing: 3px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 28px; animation: fadeUp 0.8s 0.2s ease both; opacity: 0.85; }
+.hero-desc { font-size: 16px; font-weight: 300; color: var(--gray-light); line-height: 1.85; max-width: 480px; margin-bottom: 48px; animation: fadeUp 0.8s 0.3s ease both; }
+.hero-actions { display: flex; gap: 18px; flex-wrap: wrap; animation: fadeUp 0.8s 0.4s ease both; }
+.btn-primary { background: var(--gold); color: var(--navy); padding: 16px 36px; font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.25s, transform 0.2s; text-decoration: none; display: inline-block; font-weight: 500; }
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--white); padding: 16px 36px; font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(245,240,232,0.3); cursor: pointer; transition: border-color 0.25s, color 0.25s, transform 0.2s; text-decoration: none; display: inline-block; }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.hero-logo-wrap { position: absolute; right: 60px; top: 50%; transform: translateY(-50%); z-index: 2; animation: fadeIn 1.2s 0.3s ease both; }
+.hero-logo-wrap img { height: 460px; width: auto; filter: drop-shadow(0 0 80px rgba(201,168,76,0.22)); }
+.hero-stats { position: absolute; bottom: 60px; left: 60px; right: 60px; display: flex; border-top: 1px solid var(--gold-dim); padding-top: 40px; animation: fadeUp 0.8s 0.6s ease both; z-index: 2; }
+.stat { flex: 1; padding: 0 40px; border-right: 1px solid var(--gold-dim); }
+.stat:first-child { padding-left: 0; }
+.stat:last-child { border-right: none; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+.stat-label { font-size: 11px; letter-spacing: 2px; color: var(--gray); text-transform: uppercase; }
+
+.services { padding: 120px 60px; }
+.section-header { text-align: center; margin-bottom: 80px; }
+.section-eyebrow { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.section-eyebrow span { font-size: 11px; letter-spacing: 4px; color: var(--gold-light); text-transform: uppercase; opacity: 0.8; }
+.section-eyebrow-line { width: 28px; height: 1px; background: var(--gold); opacity: 0.4; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 52px); font-weight: 500; color: var(--white); line-height: 1.1; }
+.section-title em { font-style: italic; color: var(--gold); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.service-card { background: var(--navy-mid); padding: 52px 40px; position: relative; overflow: hidden; transition: background 0.3s; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { background: var(--navy-light); }
+.service-icon { width: 52px; height: 52px; border: 1px solid var(--gold-dim); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; font-size: 22px; }
+.service-num { position: absolute; top: 32px; right: 32px; font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; color: rgba(201,168,76,0.05); line-height: 1; }
+.service-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; color: var(--white); margin-bottom: 16px; }
+.service-desc { font-size: 14px; font-weight: 300; color: var(--gray); line-height: 1.8; }
+
+.pricing { padding: 120px 60px; background: var(--navy-mid); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.pricing-card { background: var(--navy); padding: 52px 40px; position: relative; border: 1px solid var(--gold-dim); transition: border-color 0.3s, transform 0.3s; }
+.pricing-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-6px); }
+.pricing-card.featured { border-color: var(--gold); background: var(--navy-card); }
+.pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 5px 18px; white-space: nowrap; font-weight: 500; }
+.pricing-tier { font-size: 11px; letter-spacing: 3px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 24px; opacity: 0.8; }
+.pricing-price { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; color: var(--white); line-height: 1; margin-bottom: 6px; }
+.pricing-price sup { font-size: 24px; vertical-align: super; color: var(--gold); }
+.pricing-period { font-size: 12px; color: var(--gray); letter-spacing: 1px; margin-bottom: 36px; }
+.pricing-divider { height: 1px; background: var(--gold-dim); margin-bottom: 32px; }
+.pricing-features { list-style: none; margin-bottom: 40px; }
+.pricing-features li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 300; color: var(--gray); margin-bottom: 14px; line-height: 1.5; }
+.pricing-features li::before { content: ''; width: 16px; height: 16px; flex-shrink: 0; border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%23c9a84c' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat; margin-top: 1px; }
+
+.about { padding: 120px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+.about-visual { position: relative; }
+.about-img-frame { width: 100%; aspect-ratio: 4/5; background: var(--navy-mid); border: 1px solid var(--gold-dim); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.about-accent-box { position: absolute; bottom: -24px; right: -24px; width: 160px; height: 160px; background: var(--gold); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.about-accent-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: var(--navy); line-height: 1; }
+.about-accent-label { font-size: 10px; letter-spacing: 2px; color: var(--navy); text-align: center; text-transform: uppercase; opacity: 0.75; font-weight: 500; }
+.about-body { font-size: 16px; font-weight: 300; color: var(--gray-light); line-height: 1.9; margin-bottom: 28px; }
+.about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.value-item { padding: 24px; border-left: 2px solid var(--gold); background: rgba(201,168,76,0.04); }
+.value-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold-light); margin-bottom: 8px; }
+.value-desc { font-size: 13px; color: var(--gray); line-height: 1.7; font-weight: 300; }
+
+.testimonials { padding: 120px 60px; background: var(--navy-mid); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+.testimonial-card { background: var(--navy); padding: 44px 36px; border-bottom: 2px solid var(--gold); }
+.testimonial-quote { font-family: 'Cormorant Garamond', serif; font-size: 64px; line-height: 0.6; color: var(--gold); opacity: 0.35; margin-bottom: 20px; display: block; }
+.testimonial-text { font-size: 15px; font-weight: 300; color: var(--white); line-height: 1.8; font-style: italic; margin-bottom: 32px; opacity: 0.9; }
+.testimonial-author { display: flex; align-items: center; gap: 14px; }
+.testimonial-avatar { width: 44px; height: 44px; background: var(--navy-light); border: 1px solid var(--gold-dim); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold); font-weight: 600; flex-shrink: 0; }
+.testimonial-name { font-size: 14px; font-weight: 500; color: var(--white); }
+.testimonial-role { font-size: 12px; color: var(--gray); letter-spacing: 1px; }
+
+.cta-band { padding: 100px 60px; background: var(--gold); display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; overflow: hidden; }
+.cta-band::before { content: 'AEGIS'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%); font-family: 'Cormorant Garamond', serif; font-size: 200px; font-weight: 600; color: rgba(13,27,42,0.06); pointer-events: none; user-select: none; }
+.cta-band h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 500; color: var(--navy); line-height: 1.1; margin-bottom: 16px; }
+.cta-band p { font-size: 15px; font-weight: 400; color: rgba(13,27,42,0.7); max-width: 460px; line-height: 1.7; }
+.btn-navy { background: var(--navy); color: var(--gold); padding: 18px 44px; font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; transition: opacity 0.25s, transform 0.2s; white-space: nowrap; text-decoration: none; display: inline-block; font-weight: 500; }
+.btn-navy:hover { opacity: 0.88; transform: translateY(-2px); }
+
+.contact { padding: 120px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
+.contact-item { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 40px; }
+.contact-icon { width: 48px; height: 48px; flex-shrink: 0; border: 1px solid var(--gold-dim); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.contact-label { font-size: 10px; letter-spacing: 3px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 6px; opacity: 0.8; }
+.contact-value { font-size: 15px; color: var(--white); font-weight: 300; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; background: var(--navy-mid); border: 1px solid var(--gold-dim); color: var(--white); padding: 14px 18px; font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; outline: none; transition: border-color 0.25s; appearance: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group select option { background: var(--navy-mid); }
+
+footer { background: #06101a; padding: 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; border-top: 1px solid var(--gold-dim); }
+.footer-logo { display: flex; align-items: center; gap: 14px; }
+.footer-logo img { height: 44px; }
+.footer-logo-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold); letter-spacing: 2px; }
+.footer-tagline { font-size: 11px; letter-spacing: 1.5px; color: var(--gray); margin-top: 4px; }
+.footer-copy { font-size: 12px; color: var(--gray); text-align: right; line-height: 1.7; }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 11px; letter-spacing: 2px; color: var(--gray); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) {
+  nav { padding: 16px 30px; }
+  .nav-links { display: none; }
+  .hero { padding: 120px 30px 240px; }
+  .hero-logo-wrap { display: none; }
+  .hero-stats { left: 30px; right: 30px; flex-wrap: wrap; }
+  .stat { flex: 0 0 45%; border-right: none; padding: 0 0 20px 0 !important; }
+  .services { padding: 80px 30px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .pricing { padding: 80px 30px; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 460px; }
+  .about { padding: 80px 30px; grid-template-columns: 1fr; gap: 60px; }
+  .about-values { grid-template-columns: 1fr; }
+  .testimonials { padding: 80px 30px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .cta-band { padding: 70px 30px; flex-direction: column; }
+  .contact { padding: 80px 30px; grid-template-columns: 1fr; gap: 60px; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { padding: 40px 30px; flex-direction: column; text-align: center; }
+  .footer-copy { text-align: center; }
+}
+@media (max-width: 640px) { .services-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="logo.png" alt="Aegis Bookkeeping Logo">
+    <div>
+      <div class="nav-logo-name">AEGIS</div>
+      <div class="nav-logo-sub">Bookkeeping</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Free Consultation</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Professional Bookkeeping Services</span>
+    </div>
+    <h1>Clean Books.<br><em>Clear Growth.</em></h1>
+    <p class="hero-tagline">Protecting Your Business. Powering Your Growth.</p>
+    <p class="hero-desc">Aegis Bookkeeping delivers meticulous financial record-keeping so you can focus on what you do best — running and growing your business.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a Free Evaluation</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-logo-wrap">
+    <img src="logo.png" alt="Aegis Bookkeeping Shield">
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Accuracy Guaranteed</div></div>
+    <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Report Turnaround</div></div>
+    <div class="stat"><div class="stat-num">QBO</div><div class="stat-label">QuickBooks Certified</div></div>
+    <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Surprise Fees</div></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-header reveal">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>What We Offer</span><div class="section-eyebrow-line"></div></div>
+    <h2 class="section-title">Built for Small Businesses.<br><em>Delivered Like a Fortune 500.</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal"><div class="service-num">01</div><div class="service-icon">📒</div><h3 class="service-title">Monthly Bookkeeping</h3><p class="service-desc">Consistent, accurate monthly financial records — reconciled accounts, categorized transactions, and clean books delivered every month without fail.</p></div>
+    <div class="service-card reveal"><div class="service-num">02</div><div class="service-icon">📊</div><h3 class="service-title">Financial Reporting</h3><p class="service-desc">Profit & loss statements, balance sheets, and cash flow reports that give you a real-time picture of your business performance.</p></div>
+    <div class="service-card reveal"><div class="service-num">03</div><div class="service-icon">🧹</div><h3 class="service-title">Books Cleanup</h3><p class="service-desc">Months or years of messy books holding you back? We untangle the chaos and bring your accounts up to date — fast.</p></div>
+    <div class="service-card reveal"><div class="service-num">04</div><div class="service-icon">💳</div><h3 class="service-title">Accounts Payable & Receivable</h3><p class="service-desc">We track what you owe and what you're owed, keeping your cash flow healthy and your vendor relationships intact.</p></div>
+    <div class="service-card reveal"><div class="service-num">05</div><div class="service-icon">💼</div><h3 class="service-title">Payroll Support</h3><p class="service-desc">Accurate payroll records and coordination with your payroll provider so your team always gets paid correctly and on time.</p></div>
+    <div class="service-card reveal"><div class="service-num">06</div><div class="service-icon">📁</div><h3 class="service-title">Tax-Ready Financials</h3><p class="service-desc">Hand your CPA clean, organized financials at tax time. No scrambling, no surprises — just a smooth filing season every year.</p></div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="section-header reveal">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Transparent Pricing</span><div class="section-eyebrow-line"></div></div>
+    <h2 class="section-title">Simple Plans.<br><em>No Surprises.</em></h2>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card reveal">
+      <div class="pricing-tier">Starter</div>
+      <div class="pricing-price"><sup>$</sup>500</div>
+      <div class="pricing-period">per month</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Up to 100 transactions/month</li><li>Monthly bank reconciliation</li><li>Profit & loss statement</li><li>Balance sheet</li><li>Email support</li><li>QuickBooks Online included</li>
+      </ul>
+      <a href="#contact" class="btn-outline" style="display:block;text-align:center;">Get Started</a>
+    </div>
+    <div class="pricing-card featured reveal">
+      <div class="pricing-badge">Most Popular</div>
+      <div class="pricing-tier">Growth</div>
+      <div class="pricing-price"><sup>$</sup>900</div>
+      <div class="pricing-period">per month</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Up to 250 transactions/month</li><li>Monthly bank reconciliation</li><li>Full financial reporting suite</li><li>Accounts payable & receivable</li><li>Payroll support coordination</li><li>Priority email & phone support</li><li>Quarterly review call</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;">Get Started</a>
+    </div>
+    <div class="pricing-card reveal">
+      <div class="pricing-tier">Premium</div>
+      <div class="pricing-price"><sup>$</sup>1,500</div>
+      <div class="pricing-period">per month</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Unlimited transactions</li><li>Everything in Growth</li><li>Monthly strategy call</li><li>Cash flow forecasting</li><li>Tax-ready year-end package</li><li>Dedicated bookkeeper</li><li>Same-day response guarantee</li>
+      </ul>
+      <a href="#contact" class="btn-outline" style="display:block;text-align:center;">Get Started</a>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:40px;font-size:13px;color:var(--gray);font-weight:300;">Need a books cleanup first? One-time cleanup starts at <strong style="color:var(--gold)">$75/hour</strong>. Contact us for a free assessment.</p>
+</section>
+
+<section class="about" id="about">
+  <div class="about-visual reveal">
+    <div class="about-img-frame">
+      <img src="logo.png" alt="Aegis Bookkeeping" style="height:80%;width:auto;">
+    </div>
+    <div class="about-accent-box">
+      <div class="about-accent-num">100%</div>
+      <div class="about-accent-label">Remote<br>Friendly</div>
+    </div>
+  </div>
+  <div class="about-content reveal">
+    <div class="section-eyebrow" style="margin-bottom:20px;"><div class="section-eyebrow-line"></div><span>About Aegis</span></div>
+    <h2 class="section-title" style="text-align:left;margin-bottom:28px;">Your <em>Shield</em><br>Against Financial Chaos.</h2>
+    <p class="about-body">Aegis Bookkeeping was built on a simple belief: small business owners deserve the same financial clarity that large corporations take for granted — without the corporate price tag.</p>
+    <p class="about-body">We serve business owners across the country remotely, delivering clean books, clear reports, and the peace of mind that comes from knowing your finances are handled with precision and care.</p>
+    <div class="about-values">
+      <div class="value-item"><div class="value-title">Accuracy First</div><div class="value-desc">Every number verified. Every account reconciled. No shortcuts.</div></div>
+      <div class="value-item"><div class="value-title">Transparent</div><div class="value-desc">Flat monthly pricing. No surprise fees. Ever.</div></div>
+      <div class="value-item"><div class="value-title">Responsive</div><div class="value-desc">You'll always hear back from a real person, fast.</div></div>
+      <div class="value-item"><div class="value-title">Tax-Ready</div><div class="value-desc">Your CPA will thank you. Every month, not just April.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="section-header reveal">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Client Stories</span><div class="section-eyebrow-line"></div></div>
+    <h2 class="section-title">Trusted by Business Owners<br><em>Who Value Their Time.</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <span class="testimonial-quote">"</span>
+      <p class="testimonial-text">Running a marketing agency means cash flow can be all over the place. Aegis brought order to the chaos — I finally know exactly where every dollar is going each month.</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">R</div><div><div class="testimonial-name">Ryan M.</div><div class="testimonial-role">Founder, Reach Media Agency</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <span class="testimonial-quote">"</span>
+      <p class="testimonial-text">As a real estate investor juggling multiple properties, my books were a nightmare. Aegis cleaned everything up fast and now I have crystal clear reporting every single month.</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">T</div><div><div class="testimonial-name">Tanya B.</div><div class="testimonial-role">Real Estate Investor, Houston TX</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <span class="testimonial-quote">"</span>
+      <p class="testimonial-text">My coaching business scaled fast and my finances didn't keep up. Aegis stepped in, got everything organized, and now tax season is actually stress-free for the first time.</p>
+      <div class="testimonial-author"><div class="testimonial-avatar">D</div><div><div class="testimonial-name">Dana W.</div><div class="testimonial-role">Business Coach & Course Creator</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div>
+    <h2>Ready for Books You Can<br>Actually Count On?</h2>
+    <p>Book a free 30-minute evaluation call. We'll review your current situation and tell you exactly how we can help — no obligation.</p>
+  </div>
+  <a href="#contact" class="btn-navy">Book Your Free Call</a>
+</section>
+
+<section class="contact" id="contact">
+  <div class="reveal">
+    <div class="section-eyebrow" style="margin-bottom:20px;"><div class="section-eyebrow-line"></div><span>Get in Touch</span></div>
+    <h2 class="section-title" style="text-align:left;margin-bottom:40px;">Let's Talk<br><em>About Your Books.</em></h2>
+    <div class="contact-item"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value">jake@aegisbookkeeping.com</div></div></div>
+    <div class="contact-item"><div class="contact-icon">🕐</div><div><div class="contact-label">Response Time</div><div class="contact-value">Within 24 business hours</div></div></div>
+    <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Service Area</div><div class="contact-value">Serving clients nationwide — 100% remote</div></div></div>
+  </div>
+  <div class="reveal">
+    <div class="form-row">
+      <div class="form-group"><label>First Name</label><input type="text" placeholder="John"></div>
+      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+    </div>
+    <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@yourbusiness.com"></div>
+    <div class="form-group"><label>Business Name</label><input type="text" placeholder="Smith's Hardware LLC"></div>
+    <div class="form-group"><label>Service Needed</label>
+      <select><option value="">Select a service...</option><option>Monthly Bookkeeping</option><option>Books Cleanup</option><option>Financial Reporting</option><option>Not Sure — Need Guidance</option></select>
+    </div>
+    <div class="form-group"><label>Tell Us About Your Business</label><textarea placeholder="A brief description of your business and what you're looking for..."></textarea></div>
+    <button class="btn-primary" style="width:100%;padding:18px;font-size:12px;letter-spacing:2px;border:none;cursor:pointer;">Send Message</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo.png" alt="Aegis Bookkeeping">
+    <div><div class="footer-logo-name">AEGIS BOOKKEEPING</div><div class="footer-tagline">Protecting Your Business. Powering Your Growth.</div></div>
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Aegis Bookkeeping. All rights reserved.<br><span style="font-size:11px;">jake@aegisbookkeeping.com</span></div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 100);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
