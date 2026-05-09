@@ -366,17 +366,22 @@ footer { background: #06101a; padding: 60px; display: flex; align-items: center;
     <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Service Area</div><div class="contact-value">Serving clients nationwide — 100% remote</div></div></div>
   </div>
   <div class="reveal">
+    <form action="https://formspree.io/f/xeenrlzr" method="POST" id="contact-form">
     <div class="form-row">
-      <div class="form-group"><label>First Name</label><input type="text" placeholder="John"></div>
-      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+      <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="John" required></div>
+      <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
     </div>
-    <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@yourbusiness.com"></div>
-    <div class="form-group"><label>Business Name</label><input type="text" placeholder="Smith's Hardware LLC"></div>
+    <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="john@yourbusiness.com" required></div>
+    <div class="form-group"><label>Business Name</label><input type="text" name="business_name" placeholder="Smith's Hardware LLC"></div>
     <div class="form-group"><label>Service Needed</label>
-      <select><option value="">Select a service...</option><option>Monthly Bookkeeping</option><option>Books Cleanup</option><option>Financial Reporting</option><option>Not Sure — Need Guidance</option></select>
+      <select name="service"><option value="">Select a service...</option><option>Monthly Bookkeeping</option><option>Books Cleanup</option><option>Financial Reporting</option><option>Not Sure — Need Guidance</option></select>
     </div>
-    <div class="form-group"><label>Tell Us About Your Business</label><textarea placeholder="A brief description of your business and what you're looking for..."></textarea></div>
-    <button class="btn-primary" style="width:100%;padding:18px;font-size:12px;letter-spacing:2px;border:none;cursor:pointer;">Send Message</button>
+    <div class="form-group"><label>Tell Us About Your Business</label><textarea name="message" placeholder="A brief description of your business and what you're looking for..."></textarea></div>
+    <button type="submit" class="btn-primary" style="width:100%;padding:18px;font-size:12px;letter-spacing:2px;border:none;cursor:pointer;">Send Message</button>
+    <div id="form-success" style="display:none;margin-top:20px;padding:20px;background:rgba(201,168,76,0.1);border:1px solid var(--gold);text-align:center;">
+      <p style="color:var(--gold-light);font-size:14px;letter-spacing:1px;">✓ Message received! We'll be in touch within 24 business hours.</p>
+    </div>
+    </form>
   </div>
 </section>
 
@@ -405,6 +410,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) t.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// Formspree AJAX submission
+const form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.reset();
+        document.getElementById('form-success').style.display = 'block';
+        btn.textContent = 'Message Sent';
+      } else {
+        btn.textContent = 'Error — Try Again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error — Try Again';
+      btn.disabled = false;
+    }
+  });
+}
 </script>
 </body>
 </html>
