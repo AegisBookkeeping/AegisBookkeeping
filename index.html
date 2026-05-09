@@ -105,12 +105,12 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--c
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 60px;
+  padding: 14px 60px;
   background: rgba(242,237,228,0.97); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--sage-dim);
 }
 .nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 48px; width: auto; }
+.nav-logo img { height: 56px; width: auto; }
 .nav-links { display: flex; gap: 38px; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--charcoal); font-size: 12px; letter-spacing: 2px; opacity: 0.65; transition: opacity 0.2s, color 0.2s; text-transform: uppercase; }
 .nav-links a:hover { opacity: 1; color: var(--forest); }
@@ -130,7 +130,7 @@ nav {
 /* ── HERO ── */
 .hero {
   min-height: 100vh; display: flex; align-items: center;
-  position: relative; padding: 120px 60px 220px; overflow: hidden;
+  position: relative; padding: 140px 60px 220px; overflow: hidden;
   background: var(--forest);
 }
 .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 45%, rgba(122,158,126,0.12) 0%, transparent 60%), radial-gradient(ellipse at 15% 85%, rgba(122,158,126,0.06) 0%, transparent 50%); }
@@ -216,7 +216,7 @@ nav {
 .software-logos { display: flex; align-items: center; justify-content: center; gap: 80px; flex-wrap: wrap; }
 .software-badge { display: flex; flex-direction: column; align-items: center; gap: 0; opacity: 0.75; transition: opacity 0.3s; }
 .software-badge:hover { opacity: 1; }
-.qbo-logo-img { height: 52px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; transition: opacity 0.3s; }
+.qbo-logo-img { height: 44px; width: auto; filter: brightness(0) invert(1); opacity: 0.88; transition: opacity 0.3s; }
 .software-badge:hover .qbo-logo-img { opacity: 1; }
 .qbo-cert-img { height: 130px; width: auto; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3)); transition: transform 0.3s; }
 .software-badge:hover .qbo-cert-img { transform: translateY(-4px); }
@@ -362,7 +362,7 @@ footer { padding: 60px; background: var(--forest); border-top: 1px solid rgba(12
 
 /* ── MOBILE RESPONSIVE ── */
 @media (max-width: 1024px) {
-  nav { padding: 18px 30px; }
+  nav { padding: 10px 30px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
@@ -420,7 +420,7 @@ footer { padding: 60px; background: var(--forest); border-top: 1px solid rgba(12
 <!-- ── NAV ── -->
 <nav>
   <div class="nav-logo">
-    <img src="logo.png" alt="Aegis Bookkeeping">
+    <img src="logo-nav.png" alt="Aegis Bookkeeping">
   </div>
   <ul class="nav-links">
     <li><a href="#who-we-help">Who We Help</a></li>
@@ -796,7 +796,7 @@ footer { padding: 60px; background: var(--forest); border-top: 1px solid rgba(12
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-logo">
-    <img src="logo.png" alt="Aegis Bookkeeping" style="height:52px;width:auto;">
+    <img src="logo-nav.png" alt="Aegis Bookkeeping" style="height:52px;width:auto;filter:brightness(0) invert(1);opacity:0.9;">
     <div><div class="footer-logo-name">AEGIS BOOKKEEPING</div><div class="footer-tagline">Protecting Your Business. Powering Your Growth.</div></div>
   </div>
   <div class="footer-links">
