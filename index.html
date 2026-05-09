@@ -216,8 +216,9 @@ nav {
 .software-logos { display: flex; align-items: center; justify-content: center; gap: 80px; flex-wrap: wrap; }
 .software-badge { display: flex; flex-direction: column; align-items: center; gap: 0; opacity: 0.75; transition: opacity 0.3s; }
 .software-badge:hover { opacity: 1; }
-.qbo-logo-img { height: 44px; width: auto; filter: brightness(0) invert(1); opacity: 0.88; transition: opacity 0.3s; }
-.software-badge:hover .qbo-logo-img { opacity: 1; }
+.qbo-logo-wrap { background: #ffffff; padding: 12px 24px; display: flex; align-items: center; justify-content: center; }
+.qbo-logo-img { height: 40px; width: auto; opacity: 1; transition: opacity 0.3s; }
+.software-badge:hover .qbo-logo-img { opacity: 0.85; }
 .qbo-cert-img { height: 130px; width: auto; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3)); transition: transform 0.3s; }
 .software-badge:hover .qbo-cert-img { transform: translateY(-4px); }
 .veteran-badge {
@@ -566,7 +567,9 @@ footer { padding: 60px; background: var(--forest); border-top: 1px solid rgba(12
   <p class="software-strip-label">Tools We Work With &amp; Who We Are</p>
   <div class="software-logos">
     <div class="software-badge">
-      <img src="qbo-logo.png" alt="QuickBooks Online" class="qbo-logo-img">
+      <div class="qbo-logo-wrap">
+        <img src="qbo-logo.png" alt="QuickBooks Online" class="qbo-logo-img">
+      </div>
     </div>
     <div class="software-badge">
       <img src="qbo-certified.png" alt="Intuit ProAdvisor — QuickBooks Level 1 Certified" class="qbo-cert-img">
